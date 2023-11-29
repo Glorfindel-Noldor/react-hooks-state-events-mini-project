@@ -1,27 +1,22 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-function CategoryFilter({ categories, setCategories }) {
-
-
-  
-  
-  
-  const categoriesButton = categories.map((category)=>(
-    <button key={category}>
-      {category}
-    </button>
-  ))
-  
-
-
-
-
-
+function CategoryFilter({ categories, onCategoryChange }) {
+  const handleCategoryClick = (category) => {
+    onCategoryChange(category);
+  };
 
   return (
     <div className="categories">
       <h5>Category filters</h5>
-      {categoriesButton}
+      {categories.map((category) => (
+        <button
+          key={category}
+          onClick={() => handleCategoryClick(category)}
+          className=""
+        >
+          {category}
+        </button>
+      ))}
     </div>
   );
 }
