@@ -1,6 +1,8 @@
 import React from "react";
 
 function Task({ task, tasks, setTasks }) {
+
+  
   const handleDelete = () => {
     const updatedTasks = tasks.filter((t) => t !== task);
     setTasks(updatedTasks);

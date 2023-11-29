@@ -7,7 +7,9 @@ function CategoryFilter({ categories, setCategories }) {
   
   
   const categoriesButton = categories.map((category)=>(
-    <button key={category}>{category}</button>
+    <button key={category}>
+      {category}
+    </button>
   ))
   
 

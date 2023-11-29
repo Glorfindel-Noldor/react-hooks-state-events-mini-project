@@ -11,16 +11,32 @@ function App() {
   const [tasks, setTasks] = useState(TASKS);
   const [categories, setCategories] = useState(CATEGORIES);
 
+  const handleNewTask = (newTask)=>{
+    setTasks([newTask, ...tasks])
+  }
+
   return (
     <div className="App">
       <h2>My tasks</h2>
+
       <CategoryFilter 
       categories={categories}
       setCategories={setCategories}
       setTasks={setTasks}
+      
       />
-      <NewTaskForm />
-      <TaskList tasks={tasks} setTasks={setTasks} />
+
+      <NewTaskForm 
+        categories={categories}
+        handleNewTask={handleNewTask}
+
+      />
+      <TaskList 
+        tasks={tasks} 
+        setTasks={setTasks} 
+
+      />
+
     </div>
   );
 }
